@@ -3,6 +3,15 @@ body {
   font-family: cursive;
 }
 
-.clearEvent {
+.completed {
   cursor: pointer;
+  border: none;
+}
+
+.list-container {
+  justify-content: space-evenly;
+}
+
+li {
+  list-style-type: none;
 }
