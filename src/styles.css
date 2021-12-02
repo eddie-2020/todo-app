@@ -1,0 +1,9 @@
+body {
+  background-color: #efefef;
+  font-family: cursive;
+}
+
+/* Clear Event */
+.clearEvent {
+  cursor: pointer;
+}
