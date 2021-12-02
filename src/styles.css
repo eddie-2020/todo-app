@@ -3,7 +3,15 @@ body {
   font-family: cursive;
 }
 
-/* Clear Event */
-.clearEvent {
+.completed {
   cursor: pointer;
+  border: none;
+}
+
+.list-container {
+  justify-content: space-evenly;
+}
+
+li {
+  list-style-type: none;
 }

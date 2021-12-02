@@ -1,53 +1,38 @@
 # To-Do-List
+ This is a To-Do list app that
 
-Additional description about the project and its features.
+# Additional description about the project and its features.
 
-## Built With
+# Built With
+  1. HTML
+  2. CSS
+  3. Linters (Webhint, Stylelint, Lighthouse).
+  4. Webpack Module Bundler.
 
-- Major languages:HTML, CSS, JavaScript and webpack plugins
-- Frameworks:no frame works used
-- Technologies used:webhint, stylehint, lighthouse and webpack
-
-
-## Getting Started
+# Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
--Github
+Prerequisites
+Setup: Clone https://github.com/oluyaratosin123/To-Do-List.git into the destination folder of your local machine.
+Install: Install linters with the npx commands given in the linters.yml file.
+Usage: N/A
+Run tests: Run syntax tests with the use of the npx commands given in the linters.yml file.
+Deployment: Run index.html on your local server.
 
-### Setup
--git clone https://github.com/oluyaratosin123/To-Do-List.git
+# Live Version
+Live Demo Link: 
+# Authors
 
-### Install
--Run npm install
-
-### Usage
--Open index.html to view in browser
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/oluyaratosin123)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/edward-oluyara-708b88215/)
-
-## 🤝 Contributing
+GitHub: @oluyaratosin123
+LinkedIn: Oluyara Edward
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the issues page.
 
-## Show your support
-
+Show your support
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
+📝 License
+This project is MIT licensed

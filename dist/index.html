@@ -9,29 +9,54 @@
 <script defer src="index.bundle.js"></script></head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <h3 class="title">Today's To Do</h3>
-      <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
-    </div>
+  <main>
+    <section class="header card">
+
+      <!--Event Card 1-->
+      <article>
+        
+      <div class="card">
+
+      <div class="first-card-content">
+        <div class="first-card-content-title">
+          <h1>Today's To Do</h1>
+        </div>
+      </div>
+     </div>
+     
+    <hr>
+
+      <!--Event Card 2-->
+    <div class="event-list-container">
+      <div class="v-width">
+        <form class="event-task">
+          <input
+            placeholder="Add To Your List..."
+            type="text"
+            class="v-width inputWrapper"
+            
+          />
+          <i class="fa fa-reply wrapper"></i>
+        </form>
+        
+        <hr>
       
-    <hr>
+        <ul class="event-data" id="event-data"></ul>
+      </div>  
 
-    <div class="input">
-      <input type="text" class="toDo" placeholder="Add to your list...">
-      <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
+    <!--Submit Button-->
+    <div class="clear-btn btn-flex completed">
+
+      <div class="v-width btnClear">
+       <input type="button" value="Clear all completed">
+      </div>
+
     </div>
 
-    <hr>
-
-    <div class="list-container">
-       <ul class="eventList"></ul>
     </div>
 
-    <div class="clearEvent">
-      <p>Clear all completed</p>
-    </div>
-    <p>gsgffgfgfgfgf</p>
-    </div>
+  </article>
+  </section>
+  </main>
 </body>
 </html>
