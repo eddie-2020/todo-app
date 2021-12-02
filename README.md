@@ -4,7 +4,9 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages:HTML,CSS,JavaScript
+
+- Major languages:HTML, CSS, JavaScript and webpack plugins
+
 - Frameworks:no frame works used
 - Technologies used:webhint, stylehint, lighthouse and webpack
 
