@@ -1,17 +1,73 @@
 body {
   background-color: #efefef;
   font-family: cursive;
+  overflow-x: hidden;
 }
 
-.completed {
+.container {
+  width: 100%;
+  height: 75vh;
+  background-color: #fff;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 40px;
+}
+
+.header {
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  display: flex;
+}
+
+.fa-refresh {
+  right: 20px;
+  font-size: 20px;
   cursor: pointer;
+  color: #007bff;
+}
+
+/* Input Event Tasks */
+.inputTask {
+  margin: auto;
+}
+
+.event {
   border: none;
+  padding: 15px;
+  font-size: 15px;
 }
 
-.list-container {
-  justify-content: space-evenly;
+/* List Of Event */
+.eventTask {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #efefef;
+  margin: 25px;
 }
 
-li {
-  list-style-type: none;
+.eventChecks {
+  display: block;
+  margin-right: auto;
+}
+
+.material-icons-outlined {
+  cursor: pointer;
+  color: #333;
+}
+
+/* Clear Field btn */
+
+.clearEvent {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.clearField {
+  text-align: center;
 }
