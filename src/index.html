@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/b7a7cffe76.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-  <title>To Do List</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/b7a7cffe76.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <title>To Do List</title>
+  </head>
 
-<body>
- <!-- To Do List Container -->
- <div class="container">
-  <div class="header">
-    <h3 class="title">Today's To Do</h3>
-    <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
-  </div>
-    
-  <hr>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="title">Today's To Do</h3>
+        <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
+      </div>
 
-  <div class="inputTask">
-    <input type="text" class="event" placeholder="Add to your list...">
-    <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
-  </div>
+      <hr />
 
-  <hr>
+      <div class="input">
+        <input type="text" class="toDo" placeholder="Add to your list..." />
+        <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
+      </div>
 
-  <div class="list-container">
-     <ul class="eventList"></ul>
-  </div>
+      <hr />
 
-    <div class="clearField">
-    <span class="clearCache clearEvent">Clear all completed</span>
+      <div class="list"></div>
+
+      <div class="clear">
+        <p>Clear all completed</p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
