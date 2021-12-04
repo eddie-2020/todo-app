@@ -1,77 +1,81 @@
+/* eslint-disable import/no-mutable-exports */
+/* eslint-disable import/no-cycle */
 import './styles.css';
-import { checkEvent, currentChecks } from './storage';
-import { setEventToLocalStorage, getEventFromLocalStorage } from './functional';
+import addList from './addToList.js';
+import completedTask from './checkBoxItem.js';
+import editToDoList from './editToList.js';
+import deleteToDo from './deleteToList.js';
+import clearAllList from './clearAllToList.js';
 
-// Array Of Event Tasks To Do
-const eventList = [
-  {
-    description: 'Play video games',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Go Shopping',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Cook Dinner',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Listen to music',
-    completed: true,
-    index: 3,
-  },
-  {
-    description: 'Read Novels',
-    completed: false,
-    index: 4,
-  },
-];
+const todoList = document.querySelector('#todoList');
+const inputFaild = document.querySelector('#inputFaild');
+const clearAllToDo = document.querySelector('#clearAllToDo');
 
-// Add Events To List
-const addToEvent = () => {
-  if (getEventFromLocalStorage() === null) {
-    setEventToLocalStorage(eventList);
-  } else {
-    const sortedEventList = getEventFromLocalStorage().sort((a, b) => a.index - b.index);
-    sortedEventList.sort((x, y) => x.index - y.index);
-    for (let i = 0; i < sortedEventList.length; i += 1) {
-      if (sortedEventList[i].completed === true) {
-        checkEvent(sortedEventList[i].index, true);
-      } else {
-        checkEvent(sortedEventList[i].index, false);
-      }
-      // create list item
-      const listEventItems = document.querySelector('.eventList');
-      listEventItems.insertAdjacentHTML(
-        'beforeend',
-        `
-          <div class="eventTask">
-            <div class="eventChecks">
-              <input type="checkbox" name="item-${sortedEventList[i].index
-}" class="checkbox" ${sortedEventList[i].completed ? 'checked' : ''}>
-              <span class="eventCheckmark" ${sortedEventList[i].completed
-    ? 'style="text-decoration: line-through"'
-    : ''
-}>${sortedEventList[i].description}</span>
-            </div>
-            <div class="material-icons-outlined">more_vert</div>
+// eslint-disable-next-line prefer-const
+export let stock = JSON.parse(localStorage.getItem('stock')) || [];
+
+export function displayToDoList(stock) {
+  if (stock !== null) {
+    stock.forEach((todo) => {
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+      const text = `<div class="list-todo" id="${todo.index + 1}">
+      <div class="group-items" id="${todo.index}">
+    <input class="form-check-input" type="checkbox" value="" ${todo.completed ? 'checked' : ''} id="defaultCheck1"/>
+          <div class="description ${todo.completed ? 'checked' : ''}" contenteditable="${!todo.completed}">${todo.description}</div>
           </div>
-        `,
-      );
-      checkEvent();
-    }
+          <i class="fas fa-trash delete"></i>
+       </div>`;
+      li.innerHTML = text;
+      todoList.appendChild(li);
+    });
   }
-};
 
-window.onload = () => {
-  currentChecks(eventList);
-  addToEvent();
-  getEventFromLocalStorage(eventList);
-  setEventToLocalStorage(eventList);
-};
+  // for check all box
+  const checkBoxButtons = document.querySelectorAll('#defaultCheck1');
+  checkBoxButtons.forEach((btn) => {
+    btn.addEventListener('change', (e) => {
+      completedTask(e);
+    });
+  });
 
-export default { addToEvent };
+  // Edit element
+  const editButtons = document.querySelectorAll('.description');
+  editButtons.forEach((btn) => {
+    btn.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        editToDoList(e);
+      }
+    });
+  });
+
+  // delete element
+  const deleteButtons = document.querySelectorAll('.delete');
+  deleteButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      todoList.innerHTML = '';
+      deleteToDo(e);
+    });
+  });
+}
+
+// Create element in the Array
+inputFaild.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && inputFaild.value) {
+    todoList.innerHTML = '';
+    addList(stock, inputFaild.value);
+    inputFaild.value = '';
+  }
+});
+
+clearAllToDo.addEventListener('click', () => {
+  todoList.innerHTML = '';
+  clearAllList();
+});
+
+window.addEventListener('load', () => {
+  const data = localStorage.getItem('stock');
+  const todoArray = JSON.parse(data);
+  displayToDoList(todoArray);
+});
