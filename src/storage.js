@@ -1,42 +1,42 @@
-import { getEventFromLocalStorage, setEventToLocalStorage } from './functional';
+const setToLocalStorage = (toDo) => {
+  localStorage.setItem('toDo', JSON.stringify(toDo));
+};
 
-const checkEvent = () => {
-  const eventCheckboxes = document.querySelectorAll('input[type=checkbox]');
+const getFromLocalStorage = () => {
+  const toDo = localStorage.getItem('toDo');
+  return JSON.parse(toDo);
+};
 
-  for (let i = 0; i < eventCheckboxes.length; i += 1) {
-    const eventTasks = eventCheckboxes[i].nextElementSibling;
+const markAsDone = (index, value) => {
+  const toDo = getFromLocalStorage();
+  toDo.forEach((item) => {
+    if (item.index === Number(index) || item.index === index.toString()) {
+      item.completed = value;
+    }
+  });
+  setToLocalStorage(toDo);
+};
 
-    eventCheckboxes[i].addEventListener('change', () => {
-      if (eventCheckboxes[i].checked) {
-        eventTasks.style.textDecoration = 'line-through';
-      } else {
-        eventTasks.style.textDecoration = 'none';
-      }
-      const eventList = getEventFromLocalStorage();
-      eventList[i].completed = eventCheckboxes[i].checked;
-      setEventToLocalStorage(eventList);
-    });
+const updateToDo = (eventTask) => {
+  const checkbox = eventTask.children[0].children[0];
+  const checkboxIndex = checkbox.getAttribute('name').split('-')[1];
+
+  if (checkbox.checked) {
+    markAsDone(checkboxIndex, true);
+    checkbox.nextElementSibling.style.textDecoration = 'line-through';
+  } else {
+    markAsDone(checkboxIndex, false);
+    checkbox.nextElementSibling.style.textDecoration = 'none';
   }
 };
 
-const currentChecks = () => {
-  const eventCheckboxes = document.querySelectorAll('input[type=checkbox]');
-
-  eventCheckboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      localStorage.setItem(checkbox.id, 'checked');
-    } else {
-      localStorage.setItem(checkbox.id, 'unchecked');
-    }
-  });
-
-  eventCheckboxes.forEach((checkbox) => {
-    if (localStorage.getItem(checkbox.id) === 'checked') {
-      checkbox.checked = true;
-    } else {
-      checkbox.checked = false;
-    }
+const reloadToDo = () => {
+  const toDoList = document.getElementsByClassName('eventTask');
+  [...toDoList].forEach((toDoList) => {
+    toDoList.children[0].children[0].addEventListener('click', () => {
+      updateToDo(toDoList);
+    });
   });
 };
 
-export { checkEvent, currentChecks };
+export { setToLocalStorage, getFromLocalStorage, reloadToDo };

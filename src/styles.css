@@ -6,12 +6,16 @@ body {
 
 .container {
   width: 80%;
-  height: 75vh;
+  height: 100%;
   background-color: #fff;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
   margin: auto;
   margin-top: 50px;
   padding: 40px;
+}
+
+li {
+  list-style-type: none;
 }
 
 .header {
@@ -49,8 +53,13 @@ body {
 }
 
 .eventChecks {
-  display: block;
+  display: flex;
   margin-right: auto;
+}
+
+.delete {
+  font-size: 20px;
+  color: #333;
 }
 
 .material-icons-outlined {
