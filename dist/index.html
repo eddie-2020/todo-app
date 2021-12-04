@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/b7a7cffe76.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-  <title>To Do List</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>To DO List</title>
 <script defer src="index.bundle.js"></script></head>
-
 <body>
- <!-- To Do List Container -->
- <div class="container">
-  <div class="header">
-    <h3 class="title">Today's To Do</h3>
-    <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
-  </div>
     
-  <hr>
-
-  <div class="inputTask">
-    <input type="text" class="event" placeholder="Add to your list...">
-    <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
-  </div>
-
-  <hr>
-
-  <div class="list-container">
-     <ul class="eventList"></ul>
-  </div>
-
-    <div class="clearField">
-    <span class="clearCache clearEvent">Clear all completed</span>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-title">Today's To Do</h1>
+            <input id="inputFaild" class="form-control" type="text" placeholder="write todo here">
+            <div class="to-do">
+                <ul class="list-group" id="todoList"></ul>
+            </div>
+            <div class="btn-clear">
+                <button id="clearAllToDo" class="btn-clear1">Clear All completed</button>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
