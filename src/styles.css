@@ -5,12 +5,11 @@ body {
   background-color: #efefef;
 }
 
-  .container {
-    width: 100vw;
-    padding: 50px;
-    margin-left: auto;
-  }
-
+.container {
+  width: 100vw;
+  padding: 50px;
+  margin-left: auto;
+}
 
 .text-title {
   font-size: 30px;
@@ -57,12 +56,11 @@ body {
 }
 
 .form-control {
- padding: 20px;
- border: none;
- font-family: cursive;
- font-size: 15px;
- border-bottom: 2px solid #efefef;
- 
+  padding: 20px;
+  border: none;
+  font-family: cursive;
+  font-size: 15px;
+  border-bottom: 2px solid #efefef;
 }
 
 .btn-clear1 {
