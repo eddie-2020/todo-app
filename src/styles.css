@@ -1,16 +1,21 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: cursive;
+  background-color: #efefef;
 }
 
-.container {
-  margin-left: 150px;
-  margin-top: 100px;
-}
+  .container {
+    width: 100vw;
+    padding: 50px;
+    margin-left: auto;
+  }
+
 
 .text-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 30px;
+  padding: 10px;
+  border-bottom: 2px solid #efefef;
 }
 
 .description {
@@ -24,7 +29,7 @@ body {
 
 .list-group-item {
   list-style-type: none;
-  border: 3px solid rgb(233, 224, 224);
+  border-bottom: 2px solid #efefef;
   margin-left: -40px;
 }
 
@@ -36,9 +41,9 @@ body {
 }
 
 .card {
-  border: 3px solid rgb(233, 224, 224);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
   width: 50%;
-  background-color: antiquewhite;
+  background-color: #fff;
   padding: 1px 20px;
 }
 
@@ -52,15 +57,22 @@ body {
 }
 
 .form-control {
-  border: 10px solid white;
-  padding: 1px 245px;
-  text-align: start;
+ padding: 20px;
+ border: none;
+ font-family: cursive;
+ font-size: 15px;
+ border-bottom: 2px solid #efefef;
+ 
 }
 
 .btn-clear1 {
-  border: 5px solid rgb(57, 57, 59);
+  border: none;
   font-weight: bold;
-  padding: 8px 280px;
-  background-color: blue;
-  color: aliceblue;
+  padding: 20px;
+  font-family: cursive;
+  font-size: 17px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #efefef;
+  color: #333;
 }
