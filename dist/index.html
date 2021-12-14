@@ -9,54 +9,29 @@
 <script defer src="index.bundle.js"></script></head>
 
 <body>
-  <main>
-    <section class="header card">
+ <!-- To Do List Container -->
+ <div class="container">
+  <div class="header">
+    <h3 class="title">Today's To Do</h3>
+    <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
+  </div>
+    
+  <hr>
 
-      <!--Event Card 1-->
-      <article>
-        
-      <div class="card">
+  <div class="inputTask">
+    <input type="text" class="event" placeholder="Add to your list...">
+    <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
+  </div>
 
-      <div class="first-card-content">
-        <div class="first-card-content-title">
-          <h1>Today's To Do</h1>
-        </div>
-      </div>
-     </div>
-     
-    <hr>
+  <hr>
 
-      <!--Event Card 2-->
-    <div class="event-list-container">
-      <div class="v-width">
-        <form class="event-task">
-          <input
-            placeholder="Add To Your List..."
-            type="text"
-            class="v-width inputWrapper"
-            
-          />
-          <i class="fa fa-reply wrapper"></i>
-        </form>
-        
-        <hr>
-      
-        <ul class="event-data" id="event-data"></ul>
-      </div>  
+  <div class="list-container">
+     <ul class="eventList"></ul>
+  </div>
 
-    <!--Submit Button-->
-    <div class="clear-btn btn-flex completed">
-
-      <div class="v-width btnClear">
-       <input type="button" value="Clear all completed">
-      </div>
-
+    <div class="clearField">
+    <span class="clearCache clearEvent">Clear all completed</span>
     </div>
-
-    </div>
-
-  </article>
-  </section>
-  </main>
+  </div>
 </body>
 </html>
