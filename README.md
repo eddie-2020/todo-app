@@ -1,7 +1,7 @@
 # To-Do-List
  This is a To-Do list app that
-
-# Additional description about the project and its features.
+  
+  ![](/src/assets/todoApp.PNG)
 
 # Built With
   1. HTML
