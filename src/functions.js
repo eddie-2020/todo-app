@@ -1,13 +1,13 @@
 import { setToLocalStorage } from './storage';
 
-const sortIndex = (list) => {
+function sortIndex (list) {
   for (let i = 0; i < list.length; i += 1) {
     list[i].index = i;
   }
   return list;
 };
 
-const generateTodoList = () => {
+function generateTodoList () {
   const list = document.getElementsByClassName('task');
   const toDoList = [];
   for (let i = 0; i < list.length; i += 1) {
@@ -24,7 +24,7 @@ const generateTodoList = () => {
   return toDoList;
 };
 
-const refreshStore = () => {
+function refreshStore () {
   const todoList = generateTodoList();
   const sortedList = sortIndex(todoList);
 
