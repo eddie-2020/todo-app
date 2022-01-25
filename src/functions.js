@@ -1,13 +1,13 @@
 import { setToLocalStorage } from './storage';
 
-function sortIndex (list) {
+function sortIndex(list) {
   for (let i = 0; i < list.length; i += 1) {
     list[i].index = i;
   }
   return list;
-};
+}
 
-function generateTodoList () {
+function generateTodoList() {
   const list = document.getElementsByClassName('task');
   const toDoList = [];
   for (let i = 0; i < list.length; i += 1) {
@@ -22,13 +22,13 @@ function generateTodoList () {
     });
   }
   return toDoList;
-};
+}
 
-function refreshStore () {
+function refreshStore() {
   const todoList = generateTodoList();
   const sortedList = sortIndex(todoList);
 
   setToLocalStorage(sortedList);
-};
+}
 
 export { generateTodoList, sortIndex, refreshStore };
