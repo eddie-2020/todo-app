@@ -6,8 +6,9 @@
 # Built With
   1. HTML
   2. CSS
-  3. Linters (Webhint, Stylelint, Lighthouse).
-  4. Webpack Module Bundler.
+  3. Javascript
+  4. Linters (Webhint, Stylelint, Lighthouse).
+  5. Webpack Module Bundler.
 
 # Getting Started
 
